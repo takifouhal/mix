@@ -9,11 +9,6 @@ class ColorSwatchToken extends ColorSwatch<int>
 
   @override
   final TokenValueGetter<ColorSwatch> valueGetter;
-
-  @override
-  ColorSwatch resolve(BuildContext context) {
-    return valueGetter(context);
-  }
 }
 
 class ColorToken extends Color implements MixToken<Color> {
@@ -21,9 +16,4 @@ class ColorToken extends Color implements MixToken<Color> {
 
   @override
   final TokenValueGetter<Color> valueGetter;
-
-  @override
-  Color resolve(BuildContext context) {
-    return valueGetter(context);
-  }
 }

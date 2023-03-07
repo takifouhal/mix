@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../helpers/dto/box_shadow.dto.dart';
+import '../../helpers/extensions.dart';
 import '../../mixer/mix_context.dart';
-import '../../theme/refs/color_token.dart';
 import 'box.attributes.dart';
 
 class BoxProps {
@@ -50,14 +50,8 @@ class BoxProps {
     final boxAttributes = mixContext.attributesOfType<BoxAttributes>();
     final context = mixContext.context;
 
-    var color = boxAttributes?.color;
-
-    if (color is ColorToken) {
-      color = color.resolve(context);
-    }
-
     return BoxProps(
-      color: color,
+      color: boxAttributes?.color?.resolve(context),
       alignment: boxAttributes?.alignment,
       margin: boxAttributes?.margin?.resolve(context),
       padding: boxAttributes?.padding?.resolve(context),

@@ -10,7 +10,7 @@ import '../../theme/refs/text_style_token.dart';
 class TextAttributes extends InheritedAttribute {
   final TextStyle? style;
   // Ref for context
-  final TextStyleToken? styleRef;
+  final TextStyle? styleRef;
   final StrutStyle? strutStyle;
   final TextAlign? textAlign;
 
@@ -60,7 +60,7 @@ class TextAttributes extends InheritedAttribute {
 
   TextAttributes copyWith({
     TextStyle? style,
-    TextStyleToken? styleRef,
+    TextStyle? styleRef,
     StrutStyle? strutStyle,
     TextAlign? textAlign,
     Locale? locale,
@@ -75,8 +75,8 @@ class TextAttributes extends InheritedAttribute {
     TextStyle? thisStyle = this.style;
     TextStyle? otherStyle = style;
 
-    TextStyleToken? thisStyleRef = this.styleRef;
-    TextStyleToken? otherStyleRef = styleRef;
+    var thisStyleRef = this.styleRef;
+    var otherStyleRef = styleRef;
 
     // During the merge we need to move the ref
     // clunky but allows cleaner api for devs

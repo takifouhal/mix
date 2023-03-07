@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme/refs/tokens.dart';
+
 extension ThemeContextExtensions on BuildContext {
   Brightness get brightness => Theme.of(this).brightness;
 
@@ -67,5 +69,15 @@ extension Matrix4Extension on Matrix4 {
     if (other == null || other == this) return this;
 
     return clone()..multiply(other);
+  }
+}
+
+extension TokenReolverExtension<T extends Object> on T {
+  T resolve(BuildContext context) {
+    final type = this;
+    if (type is MixToken<T>) {
+      return type.valueGetter(context);
+    }
+    return this;
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../helpers/extensions.dart';
 import '../../mixer/mix_context.dart';
-import '../../theme/refs/color_token.dart';
 import 'icon.attributes.dart';
 
 class IconProps {
@@ -26,14 +26,9 @@ class IconProps {
       );
     } else {
       final theme = IconTheme.of(context);
-      var color = iconAttributes.color;
-
-      if (color is ColorToken) {
-        color = color.resolve(context);
-      }
 
       props = IconProps(
-        color: color ?? theme.color,
+        color: (iconAttributes.color ?? theme.color)?.resolve(context),
         size: iconAttributes.size ?? theme.size ?? 24,
       );
     }
