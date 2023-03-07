@@ -7,9 +7,4 @@ class TextStyleToken extends TextStyle implements MixToken<TextStyle> {
 
   @override
   final TokenValueGetter<TextStyle> valueGetter;
-
-  @override
-  TextStyle resolve(BuildContext context) {
-    return valueGetter(context);
-  }
 }

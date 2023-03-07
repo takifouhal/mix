@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../helpers/extensions.dart';
 import '../../mixer/mix_context.dart';
-import '../../theme/refs/color_token.dart';
-import '../../theme/refs/text_style_token.dart';
 import 'text.attributes.dart';
 
 class TextProps {
@@ -38,24 +37,17 @@ class TextProps {
 
     final context = mixContext.context;
 
-    TextStyle? finalStyle = textAttributes?.style;
+    TextStyle? finalStyle = textAttributes?.style?.resolve(context);
     TextStyle? refStyle = textAttributes?.styleRef?.resolve(context);
-
-    if (finalStyle is TextStyleToken) {
-      finalStyle = finalStyle.resolve(context);
-    }
 
     if (refStyle != null) {
       finalStyle = refStyle.merge(finalStyle);
     }
 
-    var color = finalStyle?.color;
-    if (color is ColorToken) {
-      // Also build color ref
-      finalStyle = finalStyle?.copyWith(
-        color: color.resolve(context),
-      );
-    }
+    // Also build color ref
+    finalStyle = finalStyle?.copyWith(
+      color: finalStyle.color?.resolve(context),
+    );
 
     return TextProps(
       // Need to grab colorscheme from context

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../helpers/extensions.dart';
 import '../../mixer/mix_context.dart';
-import '../../theme/refs/color_token.dart';
 import 'image.attributes.dart';
 
 class ImageProps {
@@ -31,16 +31,10 @@ class ImageProps {
   factory ImageProps.fromContext(MixContext mixContext) {
     final attributes = mixContext.attributesOfType<ImageAttributes>();
 
-    var color = attributes?.color;
-
     final context = mixContext.context;
 
-    if (color is ColorToken) {
-      color = color.resolve(context);
-    }
-
     return ImageProps(
-      color: color,
+      color: attributes?.color?.resolve(context),
       scale: attributes?.scale,
       width: attributes?.width,
       height: attributes?.height,
