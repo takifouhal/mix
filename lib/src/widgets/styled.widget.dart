@@ -38,12 +38,6 @@ abstract class StyledWidget extends StatelessWidget {
       );
     }
 
-    if (_style == null && _mix == null) {
-      throw Exception(
-        'Parameter "style" is required, and will be required in the future.',
-      );
-    }
-
     return _style ?? _mix ?? StyleMix.constant;
   }
 
