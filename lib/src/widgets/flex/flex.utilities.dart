@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../dtos/double.dto.dart';
 import 'flex.attributes.dart';
 
 /// The FlexUtility class is responsible for creating FlexAttributes objects
@@ -56,7 +57,7 @@ class FlexUtilities {
   // Create a FlexAttribues for gap size
   StyledFlexAttributes gap(double gapSize) {
     return StyledFlexAttributes(
-      gapSize: gapSize,
+      gapSize: DoubleDto(gapSize),
     );
   }
 

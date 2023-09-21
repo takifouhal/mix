@@ -32,7 +32,7 @@ class StyledFlexDescriptor {
       mainAxisSize: flexAttributes?.mainAxisSize ?? MainAxisSize.max,
       verticalDirection:
           flexAttributes?.verticalDirection ?? VerticalDirection.down,
-      gapSize: flexAttributes?.gapSize,
+      gapSize: flexAttributes?.gapSize?.resolve(mix),
     );
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../attributes/attribute.dart';
 import '../../dtos/color.dto.dart';
+import '../../dtos/double.dto.dart';
 
 @Deprecated('Use StyledImageAttributes instead')
 typedef ImageAttributes = StyledImageAttributes;
@@ -10,8 +11,8 @@ class StyledImageAttributes extends StyledWidgetAttributes {
   final ColorDto? color;
   final double? scale;
 
-  final double? width;
-  final double? height;
+  final DoubleDto? width;
+  final DoubleDto? height;
 
   final BlendMode? colorBlendMode;
   final BoxFit? fit;
@@ -33,8 +34,8 @@ class StyledImageAttributes extends StyledWidgetAttributes {
   StyledImageAttributes copyWith({
     ColorDto? color,
     double? scale,
-    double? width,
-    double? height,
+    DoubleDto? width,
+    DoubleDto? height,
     BlendMode? colorBlendMode,
     BoxFit? fit,
     AlignmentGeometry? alignment,

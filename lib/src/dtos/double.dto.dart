@@ -30,6 +30,7 @@ class DoubleDto extends Dto<double> {
 
   @override
   double resolve(MixData mix) {
+    return mix.resolveToken.space(_value);
     final modifier = _modifier;
 
     // Apply modifier if it exists

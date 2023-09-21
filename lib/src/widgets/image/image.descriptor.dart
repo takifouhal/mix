@@ -33,8 +33,8 @@ class StyledImageDescriptor {
     return StyledImageDescriptor(
       color: attributes?.color?.resolve(mix),
       scale: attributes?.scale,
-      width: attributes?.width,
-      height: attributes?.height,
+      width: attributes?.width?.resolve(mix),
+      height: attributes?.height?.resolve(mix),
       colorBlendMode: attributes?.colorBlendMode,
       fit: attributes?.fit,
       alignment: attributes?.alignment ?? Alignment.center,

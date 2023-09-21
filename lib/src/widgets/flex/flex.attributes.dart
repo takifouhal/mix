@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../attributes/attribute.dart';
+import '../../dtos/double.dto.dart';
 
 @Deprecated('Use FlexStyleAttributes instead')
 typedef FlexAttributes = StyledFlexAttributes;
@@ -11,7 +12,7 @@ class StyledFlexAttributes extends StyledWidgetAttributes {
   final CrossAxisAlignment? crossAxisAlignment;
   final MainAxisSize? mainAxisSize;
   final VerticalDirection? verticalDirection;
-  final double? gapSize;
+  final DoubleDto? gapSize;
 
   const StyledFlexAttributes({
     this.direction,
@@ -43,7 +44,7 @@ class StyledFlexAttributes extends StyledWidgetAttributes {
     CrossAxisAlignment? crossAxisAlignment,
     MainAxisSize? mainAxisSize,
     VerticalDirection? verticalDirection,
-    double? gapSize,
+    DoubleDto? gapSize,
   }) {
     return StyledFlexAttributes(
       direction: direction ?? this.direction,

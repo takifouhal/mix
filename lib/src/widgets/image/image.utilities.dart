@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../dtos/color.dto.dart';
+import '../../dtos/double.dto.dart';
 import 'image.attributes.dart';
 
 class ImageUtility {
@@ -9,8 +10,8 @@ class ImageUtility {
   // ignore: long-parameter-list
   static StyledImageAttributes image({
     Color? color,
-    double? width,
-    double? height,
+    DoubleDto? width,
+    DoubleDto? height,
     double? scale,
     BlendMode? colorBlendMode,
     BoxFit? fit,
@@ -35,11 +36,11 @@ class ImageUtility {
   }
 
   static StyledImageAttributes width(double width) {
-    return StyledImageAttributes(width: width);
+    return StyledImageAttributes(width: DoubleDto.from(width));
   }
 
   static StyledImageAttributes height(double height) {
-    return StyledImageAttributes(height: height);
+    return StyledImageAttributes(height: DoubleDto.from(height));
   }
 
   static StyledImageAttributes colorBlendMode(BlendMode colorBlendMode) {
