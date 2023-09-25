@@ -69,7 +69,7 @@ class FlexBox extends StyledWidget {
   }
 }
 
-class StyledRow extends StyledFlex {
+class StyledRow extends FlexBox {
   const StyledRow({
     super.style,
     super.key,
@@ -81,7 +81,7 @@ class StyledRow extends StyledFlex {
         );
 }
 
-class StyledColumn extends StyledFlex {
+class StyledColumn extends FlexBox {
   const StyledColumn({
     super.style,
     super.key,
