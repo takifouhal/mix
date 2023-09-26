@@ -76,7 +76,7 @@ class MaterialColorSchemeTokens {
   final secondary = $MDColorScheme.secondary;
 
   @Deprecated('This has been deprecated now use MD3, and MD2 tokens instead')
-  final tertiary = $MDColorScheme.tertiary;
+  final tertiary = $MD3ColorScheme.tertiary;
 
   @Deprecated('This has been deprecated now use MD3, and MD2 tokens instead')
   final surface = $MDColorScheme.surface;
@@ -94,7 +94,7 @@ class MaterialColorSchemeTokens {
   final onSecondary = $MDColorScheme.onSecondary;
 
   @Deprecated('This has been deprecated now use MD3, and MD2 tokens instead')
-  final onTertiary = $MDColorScheme.onTertiary;
+  final onTertiary = $MD3ColorScheme.onTertiary;
 
   @Deprecated('This has been deprecated now use MD3, and MD2 tokens instead')
   final onSurface = $MDColorScheme.onSurface;
